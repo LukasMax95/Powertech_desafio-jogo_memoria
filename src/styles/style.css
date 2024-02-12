@@ -1,0 +1,97 @@
+body{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 100%;
+    background-color: #fc118a;
+    user-select: none;
+}
+header{
+    background-color: aqua;
+    width: 100%;
+    padding: 3rem;
+}
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(325deg, #03301e 0%, #7303c0 30%, #ec38bc 70%, #fdeff9 100%);
+    padding: 40px 60px;
+}
+
+.reset{
+    padding: 1.5rem 2rem;
+    width: 100%;
+    color:#03301e;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+    border-color: #03301e;
+    border-style: double;
+    border-width: 1rem;
+    border-radius: 1rem 0;
+}
+
+.game{
+    width: 450px;
+    height: 450px;
+    border-width: 1px;
+    border-color: #03301e;
+    border-style: solid;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+.item{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../images/fire-bowl.png");
+    font-size: 3rem;
+    transform: 3em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+}
+
+.item::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/fire-bowl.png");
+    background-size: cover;
+    transition: 0.25s;
+    transform: rotate(0deg);
+    backface-visibility: hidden;
+}
+
+.item.boxOpen{
+    transform: rotateY(0deg);
+}
+.boxOpen::after{
+    transform: rotateY(180deg);
+}
+.boxMatch{
+    background-image: url("../images/06.jpeg");
+    background-size: cover;
+}
+.boxMatch::after{
+    transform: rotateY(180deg);
+    background-image: url("../images/06.jpeg");
+    background-size: cover;
+}
